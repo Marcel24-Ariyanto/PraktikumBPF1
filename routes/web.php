@@ -2,6 +2,7 @@
 
 
 // pertemuan 2
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
@@ -55,3 +56,14 @@ Route::get('/matakuliah/{param1?}',[MatkulController::class,'show']);
 //pertemuan 3
 Route::get('/home',[HomeController::class,'index']);
 
+
+
+//pertemuan 4
+Route::get('home/Pertemuan4',function (){
+    return view('simple-home');
+});
+Route::post('home/signup',[HomeController::class,'signup']);
+
+Route::get('home/form' ,[AuthController::class, 'index']);
+
+Route::post('home/login/proces', [AuthController::class,'login']);
